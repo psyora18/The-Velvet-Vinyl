@@ -1,0 +1,689 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Purple Shelf | Online Bookstore</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #faf7ff;
+    color: #39304d;
+}
+
+/* NAVBAR */
+
+header {
+    background: #eee5ff;
+    padding: 20px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 29px;
+    font-weight: bold;
+    color: #7045a5;
+}
+
+.logo span {
+    color: #c17cae;
+}
+
+nav a {
+    text-decoration: none;
+    color: #59436e;
+    margin-left: 25px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #b36ba8;
+}
+
+/* HERO SECTION */
+
+.hero {
+    min-height: 470px;
+    padding: 70px 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(120deg, #e9dcff, #fce8f5);
+    gap: 30px;
+}
+
+.hero-content {
+    max-width: 550px;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    color: #58377e;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 span {
+    color: #b36ba8;
+}
+
+.hero-content p {
+    color: #6e5b7c;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-block;
+    background: #8055b5;
+    color: white;
+    text-decoration: none;
+    padding: 13px 27px;
+    border-radius: 30px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #bd82b5;
+    transform: translateY(-3px);
+}
+
+.hero-image img {
+    width: 350px;
+    height: 330px;
+    object-fit: cover;
+    border-radius: 45% 45% 15px 15px;
+    box-shadow: 15px 15px 0 #d6b9ef;
+}
+
+/* SEARCH BAR */
+
+.search-section {
+    padding: 35px 15px;
+    text-align: center;
+}
+
+.search-section input {
+    width: 55%;
+    padding: 15px 25px;
+    border: 2px solid #e1cef6;
+    border-radius: 30px;
+    background: white;
+    outline: none;
+    font-size: 14px;
+}
+
+.search-section input:focus {
+    border-color: #a57acb;
+}
+
+/* GENERAL SECTIONS */
+
+section {
+    padding: 55px 9%;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.heading h2 {
+    font-family: 'Playfair Display', serif;
+    color: #7045a5;
+    font-size: 34px;
+    margin-bottom: 8px;
+}
+
+.heading p {
+    color: #96849f;
+    font-size: 14px;
+}
+
+/* CATEGORIES */
+
+.category-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.category {
+    text-align: center;
+    padding: 30px 15px;
+    border-radius: 18px;
+    background: #f0e7ff;
+    transition: 0.3s;
+}
+
+.category:nth-child(2) {
+    background: #fce8f4;
+}
+
+.category:nth-child(3) {
+    background: #e8eafa;
+}
+
+.category:nth-child(4) {
+    background: #f7e9fa;
+}
+
+.category:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px #dfd0ed;
+}
+
+.category .emoji {
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+.category h3 {
+    font-family: 'Playfair Display', serif;
+    color: #654484;
+    font-size: 19px;
+}
+
+/* FEATURED BOOKS */
+
+.featured {
+    background: #f2eaff;
+}
+
+.book-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 23px;
+}
+
+.book {
+    background: white;
+    padding: 15px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(100, 65, 130, 0.08);
+    transition: 0.3s;
+}
+
+.book:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px #d9c5eb;
+}
+
+.book img {
+    width: 100%;
+    height: 225px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.book h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    color: #593b79;
+    margin-bottom: 6px;
+}
+
+.book .author {
+    color: #9b8ba3;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.price {
+    color: #9858a5;
+    font-weight: 600;
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #aaa;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.book button {
+    width: 100%;
+    padding: 11px;
+    border: none;
+    background: #8055b5;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.book button:hover {
+    background: #c17cae;
+}
+
+/* OFFER SECTION */
+
+.offer {
+    margin: 30px 9%;
+    border-radius: 25px;
+    padding: 55px 25px;
+    text-align: center;
+    background: linear-gradient(120deg, #8055b5, #c38bbd);
+    color: white;
+}
+
+.offer h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.offer p {
+    font-size: 15px;
+    margin-bottom: 22px;
+}
+
+.offer a {
+    display: inline-block;
+    text-decoration: none;
+    background: #fff4fc;
+    color: #8055b5;
+    padding: 12px 28px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* AUTHORS */
+
+.author-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.author-card {
+    text-align: center;
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 4px 15px rgba(100,65,130,0.08);
+}
+
+.author-card img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #eadbfa;
+    margin-bottom: 15px;
+}
+
+.author-card h3 {
+    font-family: 'Playfair Display', serif;
+    color: #7045a5;
+    margin-bottom: 5px;
+}
+
+.author-card p {
+    font-size: 12px;
+    color: #9b8ba3;
+}
+
+/* SHOPPING SECTION */
+
+.shopping {
+    background: #f2eaff;
+    text-align: center;
+}
+
+.shopping-box {
+    background: white;
+    max-width: 700px;
+    margin: auto;
+    padding: 35px;
+    border-radius: 20px;
+}
+
+.shopping-box h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    color: #7045a5;
+    margin-bottom: 15px;
+}
+
+.shopping-box p {
+    color: #8c7b98;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 22px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #49345f;
+    color: white;
+    padding: 35px 9%;
+    text-align: center;
+}
+
+footer h2 {
+    font-family: 'Playfair Display', serif;
+    color: #e8c9f4;
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: #d5c4df;
+    font-size: 13px;
+    margin: 8px;
+}
+
+footer .copyright {
+    margin-top: 20px;
+    border-top: 1px solid #755d8c;
+    padding-top: 20px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 900px) {
+    .book-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .category-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+    .hero-image img {
+        width: 260px;
+        height: 270px;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 7px;
+        font-size: 12px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 35px;
+    }
+
+    .hero-image img {
+        width: 250px;
+    }
+
+    .search-section input {
+        width: 90%;
+    }
+
+    .book-container,
+    .category-container,
+    .author-container {
+        grid-template-columns: 1fr;
+    }
+
+    .offer h2 {
+        font-size: 28px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header>
+    <div class="logo">The Purple <span>Shelf ♡</span></div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#books">Books</a>
+        <a href="#authors">Authors</a>
+        <a href="#shop">Shop</a>
+    </nav>
+</header>
+
+<!-- HERO SECTION -->
+
+<div class="hero" id="home">
+
+    <div class="hero-content">
+        <h1>Find Your Next <span>Favourite</span> Story.</h1>
+
+        <p>
+            A little corner for every book lover.
+            Explore magical stories, timeless classics,
+            mysterious adventures and beautiful worlds
+            waiting between the pages.
+        </p>
+
+        <a href="#books" class="btn">Explore Books ♡</a>
+    </div>
+
+    <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794"
+             alt="Beautiful books">
+    </div>
+
+</div>
+
+<!-- SEARCH -->
+
+<div class="search-section">
+    <input type="text" placeholder="Search your favourite books, authors...">
+</div>
+
+<!-- CATEGORIES -->
+
+<section id="categories">
+
+    <div class="heading">
+        <h2>Explore Categories ♡</h2>
+        <p>Something lovely for every kind of reader.</p>
+    </div>
+
+    <div class="category-container">
+
+        <div class="category">
+            <div class="emoji">💕</div>
+            <h3>Romance</h3>
+        </div>
+
+        <div class="category">
+            <div class="emoji">🔮</div>
+            <h3>Fantasy</h3>
+        </div>
+
+        <div class="category">
+            <div class="emoji">🕵️</div>
+            <h3>Mystery</h3>
+        </div>
+
+        <div class="category">
+            <div class="emoji">📖</div>
+            <h3>Classics</h3>
+        </div>
+
+    </div>
+</section>
+
+<!-- FEATURED BOOKS -->
+
+<section class="featured" id="books">
+
+    <div class="heading">
+        <h2>Our Featured Books ✨</h2>
+        <p>Handpicked stories you will fall in love with.</p>
+    </div>
+
+    <div class="book-container">
+
+        <div class="book">
+            <img src="https://covers.openlibrary.org/b/id/8228691-L.jpg"
+                 alt="Pride and Prejudice book cover">
+
+            <h3>Pride and Prejudice</h3>
+            <p class="author">By Jane Austen</p>
+            <div class="price">₹299 <span class="old-price">₹399</span></div>
+            <button>Add to Cart ♡</button>
+        </div>
+
+        <div class="book">
+            <img src="https://covers.openlibrary.org/b/id/10521270-L.jpg"
+                 alt="The Great Gatsby book cover">
+
+            <h3>The Great Gatsby</h3>
+            <p class="author">By F. Scott Fitzgerald</p>
+            <div class="price">₹249 <span class="old-price">₹349</span></div>
+            <button>Add to Cart ♡</button>
+        </div>
+
+        <div class="book">
+            <img src="https://covers.openlibrary.org/b/id/10523338-L.jpg"
+                 alt="Little Women book cover">
+
+            <h3>Little Women</h3>
+            <p class="author">By Louisa May Alcott</p>
+            <div class="price">₹349 <span class="old-price">₹449</span></div>
+            <button>Add to Cart ♡</button>
+        </div>
+
+        <div class="book">
+            <img src="https://covers.openlibrary.org/b/id/10523335-L.jpg"
+                 alt="Jane Eyre book cover">
+
+            <h3>Jane Eyre</h3>
+            <p class="author">By Charlotte Brontë</p>
+            <div class="price">₹279 <span class="old-price">₹379</span></div>
+            <button>Add to Cart ♡</button>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- OFFER -->
+
+<div class="offer">
+
+    <h2>A Little Treat for Book Lovers! 💜</h2>
+
+    <p>Get 25% OFF on your first order. Because every story deserves a new home.</p>
+
+    <a href="#shop">Grab Your Offer</a>
+
+</div>
+
+<!-- AUTHORS -->
+
+<section id="authors">
+
+    <div class="heading">
+        <h2>Meet the Authors 🌷</h2>
+        <p>The beautiful minds behind unforgettable stories.</p>
+    </div>
+
+    <div class="author-container">
+
+        <div class="author-card">
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956"
+                 alt="Author portrait">
+            <h3>Jane Austen</h3>
+            <p>Romance & Classic Fiction</p>
+        </div>
+
+        <div class="author-card">
+            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d"
+                 alt="Author portrait">
+            <h3>F. Scott Fitzgerald</h3>
+            <p>Literary Fiction</p>
+        </div>
+
+        <div class="author-card">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb"
+                 alt="Author portrait">
+            <h3>Louisa May Alcott</h3>
+            <p>Classic Literature</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SHOPPING -->
+
+<section class="shopping" id="shop">
+
+    <div class="shopping-box">
+
+        <h2>Your Reading Journey Starts Here! 🛍️</h2>
+
+        <p>
+            Discover your next favourite book, add it to your collection
+            and make some space for beautiful stories.
+            Happy Reading!
+        </p>
+
+        <a href="#books" class="btn">Start Shopping ♡</a>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h2>The Purple Shelf ♡</h2>
+
+    <p>A home for stories, dreams and imagination.</p>
+
+    <p>Home | Categories | Books | Authors | Shop</p>
+
+    <div class="copyright">
+        <p>© 2026 The Purple Shelf. All Rights Reserved.</p>
+        <p>Made with love for book lovers 💜</p>
+    </div>
+
+</footer>
+
+</body>
+</html>
